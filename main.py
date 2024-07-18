@@ -52,6 +52,7 @@ button_2_python.onclick = way_2_print #calls function 'way_2_print' when button 
 **************************************Your Function below (USE 2ND WAY)*************************************************
 
 '''
+
 def way_3(event):
     global my_strings
     reversed1 = ''.join(reversed(my_strings[0]))
@@ -60,6 +61,28 @@ def way_3(event):
 
 button_3_python = document.getElementById('my_button3_id')
 button_3_python.onclick = way_3
+
+@when("click", "#my_button4_id")
+async def generate_data():
+    # Generate a random amount of 1s and 0s with a minimum of 10
+    num_elements = random.randint(10, 20)  # Adjust the upper limit as needed
+    data = [random.choice([0, 1]) for _ in range(num_elements)]
+    
+    # Assign Messi to 1 and Ronaldo to 0
+    messi_count = data.count(1)
+    ronaldo_count = data.count(0)
+    
+    # Determine which footballer is better based on frequency
+    if messi_count > ronaldo_count:
+        result = "Messi is better"
+    elif ronaldo_count > messi_count:
+        result = "Ronaldo is better"
+    else:
+        result = "It's a tie"
+    
+    # Print the result in the terminal
+    print(f"Generated data: {data}")
+    print(result)
    
 
 
