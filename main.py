@@ -1,4 +1,5 @@
 from pyscript import document, window, when
+import random
 print("Hello, World!")
 
 
@@ -63,7 +64,7 @@ button_3_python = document.getElementById('my_button3_id')
 button_3_python.onclick = way_3
 
 @when("click", "#my_button4_id")
-async def generate_data():
+async def generate_data(event):
     # Generate a random amount of 1s and 0s with a minimum of 10
     num_elements = random.randint(10, 20)  # Adjust the upper limit as needed
     data = [random.choice([0, 1]) for _ in range(num_elements)]
