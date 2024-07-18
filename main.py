@@ -55,7 +55,7 @@ button_2_python.onclick = way_2_print #calls function 'way_2_print' when button 
 def way_3(event):
     global my_strings
     for s in my_strings:
-        print(s[::-1])
+        print(''.join(reversed(s))])
 
 button_3_python = document.getElementById('my_button3_id')
 button_3_python.onclick = way_3
